@@ -8,7 +8,7 @@ description: helps businesses create, manage, and conduct virtual appointments w
 urlFragment: microsoft-teams-apps-appointment-manager
 ---
 
-## Employee Training App Template
+## Appointment Manager App Template
 
 | [Documentation](https://github.com/OfficeDev/microsoft-teams-apps-appointment-manager/wiki) | [Deployment guide](https://github.com/OfficeDev/microsoft-teams-apps-appointment-manager/wiki/Deployment-guide) | [Architecture](https://github.com/OfficeDev/microsoft-teams-apps-appointment-manager/wiki/Solution-overview) |
 | ---- | ---- | ---- |
