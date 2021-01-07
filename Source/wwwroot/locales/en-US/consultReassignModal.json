@@ -1,0 +1,7 @@
+{
+    "staffLabel": "Staff members to notify",
+    "noteLabel": "Note",
+    "notePlaceholder": "Type a note (optional)",
+    "errorAlreadyRequested": "This appointment has already been requested for reassignment.",
+    "errorCannotReassign": "This appointment cannot be reassigned."
+}

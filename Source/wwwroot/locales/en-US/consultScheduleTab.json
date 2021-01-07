@@ -1,0 +1,15 @@
+{
+    "searchPlaceholder": "Search for appintment",
+    "unassignedSection": "<0>Unassigned appointments</0> <1>({{count}})</1>",
+    "assignedSection": "<0>Assigned appointments</0> <1>({{count}})</1>",
+    "reassignCount": "{{count}} reassignment requested!",
+    "reassignCount_plural": "{{count}} reassignments requested!",
+    "idColHeader": "Appointment ID",
+    "nameColHeader": "Customer name",
+    "categoryColHeader": "Category",
+    "timeColHeader": "Scheduled time",
+    "statusColHeader": "Status",
+    "detailsButton": "View details",
+    "stateAssignedTo": "<0>Assigned to</0> <1>{{name}}</1>",
+    "stateAssignedToYou": "<0>Assigned to</0> <1>you</1>"
+}

@@ -1,0 +1,18 @@
+{
+    "bookingHeader": "Appointment ID: {{id}}",
+    "expandDetailsButton": "See details",
+    "collapseDetailsButton": "Collapse details",
+    "assignedBy": "Assigned by {{name}}, {{dateTime}}",
+    "assignedBySelf": "Assigned by self, {{dateTime}}",
+    "requestedBy": "Requested by {{name}}, {{dateTime}}",
+    "completedBy": "Completed by {{name}}, {{dateTime}}",
+    "overviewTab": "Overview",
+    "attachmentsTab": "Attachments",
+    "notesTab": "Internal notes",
+    "queryLabel": "Query:",
+    "noAttachments": "No attachments found.",
+    "notesPlaceholder": "Enter notes here",
+    "downloadButton": "Download",
+    "addNoteButton": "Add note",
+    "errorCannotAddNote": "Sorry, the notes could not be added."
+}

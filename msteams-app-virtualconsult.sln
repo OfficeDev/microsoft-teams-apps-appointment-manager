@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Teams.App.VirtualConsult", "Source\Microsoft.Teams.App.VirtualConsult.csproj", "{2C21D92E-016E-4795-8F72-D6E572FC4690}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Teams.App.VirtualConsult.Common", "Source\Common\Microsoft.Teams.App.VirtualConsult.Common.csproj", "{190E0016-DFE0-42C2-8F50-3062DCC6E9F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B65F5221-38BD-4652-9296-3FDFC27441E7}"
+	ProjectSection(SolutionItems) = preProject
+		Build\Analyzer.ruleset = Build\Analyzer.ruleset
+		Build\stylecop.json = Build\stylecop.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C21D92E-016E-4795-8F72-D6E572FC4690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C21D92E-016E-4795-8F72-D6E572FC4690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C21D92E-016E-4795-8F72-D6E572FC4690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C21D92E-016E-4795-8F72-D6E572FC4690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190E0016-DFE0-42C2-8F50-3062DCC6E9F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190E0016-DFE0-42C2-8F50-3062DCC6E9F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190E0016-DFE0-42C2-8F50-3062DCC6E9F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190E0016-DFE0-42C2-8F50-3062DCC6E9F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7E9CE6C-2D59-4561-A03A-3FB142FF1141}
+	EndGlobalSection
+EndGlobal

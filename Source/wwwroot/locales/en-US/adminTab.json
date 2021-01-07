@@ -1,0 +1,10 @@
+{
+    "adminTabHeader": "Service management",
+    "serviceColHeader": "Service",
+    "channelColHeader": "Channel",
+    "bookingsColHeader": "Bookings",
+    "supervisorsColHeader": "Supervisors",
+    "addServiceButton": "Add service",
+    "editServiceButton": "Edit service",
+    "deleteServiceButton": "Delete service"
+}

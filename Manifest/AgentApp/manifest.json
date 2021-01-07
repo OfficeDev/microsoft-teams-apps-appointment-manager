@@ -1,0 +1,94 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.7/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.7",
+    "version": "1.0.0",
+    "showLoadingIndicator": true,
+    "id": "<GUID FOR YOUR APP>",
+    "packageName": "com.microsoft.teams.app.appointmentmanager.agent",
+    "developer": {
+        "name": "Microsoft",
+        "websiteUrl": "https://www.microsoft.com/todo",
+        "privacyUrl": "https://www.microsoft.com/todo",
+        "termsOfUseUrl": "https://www.microsoft.com/todo"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Appointment Manager",
+        "full": "Appointment Manager App"
+    },
+    "description": {
+        "short": "App for managing virtual appointments",
+        "full": "Allows consumer requests to be routed to specific Teams channels for triage and appointment scheduling"
+    },
+    "localizationInfo": {
+        "defaultLanguageTag": "en",
+        "additionalLanguages": []
+    },
+    "accentColor": "#2d47b6",
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://<YOUR HOST DOMAIN>/consult/scheduleconfig",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team"
+            ]
+        }
+    ],
+    "staticTabs": [
+        {
+            "entityId": "my",
+            "name": "My Appointments",
+            "contentUrl": "https://<YOUR HOST DOMAIN>/consult/my",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "bots": [
+        {
+            "botId": "<YOUR BOT ID>",
+            "scopes": [
+                "personal",
+                "team"
+            ],
+            "commandLists": [],
+            "supportsFiles": false,
+            "isNotificationOnly": false
+        }
+    ],
+    "composeExtensions": [
+        {
+            "botId": "<YOUR BOT ID>",
+            "canUpdateConfiguration": false,
+            "commands": [
+                {
+                    "id": "attachToTicket",
+                    "type": "action",
+                    "title": "Attach to appointment",
+                    "description": "Command action to associate attachments to appointment record",
+                    "fetchTask": true,
+                    "context": [
+                        "message"
+                    ]
+                }
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "<YOUR HOST DOMAIN>"
+    ],
+    "webApplicationInfo": {
+        "id": "<AZURE AD APP ID FOR SSO>",
+        "resource": "api://<YOUR HOST DOMAIN>/<AZURE AD APP ID FOR SSO>",
+        "applicationPermissions": [
+            "Member.Read.Group"
+        ]
+    }
+}

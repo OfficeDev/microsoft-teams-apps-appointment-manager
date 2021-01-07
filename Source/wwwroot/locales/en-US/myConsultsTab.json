@@ -1,0 +1,8 @@
+{
+    "idColHeader": "Appointment ID",
+    "nameColHeader": "Customer name",
+    "categoryColHeader": "Category",
+    "timeColHeader": "Scheduled time",
+    "statusColHeader": "Status",
+    "stateAssignedToYou": "<0>Assigned to</0> <1>you</1>"
+}

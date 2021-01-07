@@ -1,0 +1,300 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/1.2.0/adaptive-card.json",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "${staticStrings.reassignRequestCardHeader}",
+      "color": "Attention",
+      "weight": "Bolder",
+      "size": "large"
+    },
+    {
+      "type": "ColumnSet",
+      "spacing": "none",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${consultRequest.friendlyId}",
+              "size": "Small",
+              "weight": "Lighter"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "auto",
+          "separator": true
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${consultRequest.category}",
+              "size": "Small",
+              "weight": "Lighter"
+            }
+          ],
+          "spacing": "Small"
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "url": "${baseUrl}/images/default_person.png",
+              "style": "Person",
+              "size": "Small"
+            }
+          ],
+          "verticalContentAlignment": "Center"
+        },
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${consultRequest.customerName}",
+              "weight": "Bolder"
+            },
+            {
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": "auto",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${consultRequest.customerPhone}",
+                      "size": "small"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "width": "auto",
+                  "separator": true
+                },
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${consultRequest.customerEmail}",
+                      "size": "small"
+                    }
+                  ],
+                  "spacing": "small"
+                }
+              ],
+              "spacing": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "style": "warning",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "${baseUrl}/images/question_mark_icon.png",
+                  "width": "12px",
+                  "height": "12px"
+                }
+              ],
+              "verticalContentAlignment": "Center"
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "${staticStrings.requestCardQueryLabel}",
+                  "size": "small",
+                  "color": "dark",
+                  "weight": "Bolder"
+                }
+              ],
+              "spacing": "Small"
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "text": "${consultRequest.query}",
+          "size": "small",
+          "color": "dark",
+          "wrap": true,
+          "spacing": "small"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "${staticStrings.requestCardScheduledTimeLabel}"
+    },
+    {
+      "$data": "${consultRequest.assignedTimeBlock}",
+      "type": "ColumnSet",
+      "separator": true,
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "{{DATE(${startDateTime}, SHORT)}}",
+              "weight": "Bolder",
+              "wrap": true
+            }
+          ],
+          "width": "auto"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "{{TIME(${startDateTime})}} - {{TIME(${endDateTime})}}",
+              "wrap": true
+            }
+          ],
+          "width": "auto"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "${staticStrings.requestCardRequestedByLabel}"
+    },
+    {
+      "type": "ColumnSet",
+      "separator": true,
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Image",
+              "style": "Person",
+              "url": "${if(empty(initiaterPhotoUrl), concat(baseUrl, '/images/default_person.png'), initiaterPhotoUrl)}",
+              "size": "Small"
+            }
+          ],
+          "verticalContentAlignment": "Center",
+          "width": "auto"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${initiaterDisplayName}",
+              "size": "small",
+              "wrap": true,
+              "spacing": "small",
+              "weight": "Bolder"
+            }
+          ],
+          "verticalContentAlignment": "Center",
+          "width": "auto"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "${comment}",
+      "size": "small",
+      "wrap": true,
+      "spacing": "small"
+    },
+    {
+      "type": "ActionSet",
+      "spacing": "medium",
+      "actions": [
+        {
+          "type": "Action.Submit",
+          "title": "${staticStrings.requestCardAssignSelfButton}",
+          "style": "positive",
+          "data": {
+            "msteams": {
+              "type": "task/fetch"
+            },
+            "command": "assignMe",
+            "contextId": "${consultRequest.id}"
+          }
+        },
+        {
+          "type": "Action.Submit",
+          "title": "${staticStrings.requestCardAssignOtherButton}",
+          "data": {
+            "msteams": {
+              "type": "task/fetch"
+            },
+            "command": "assignOther",
+            "contextId": "${consultRequest.id}"
+          }
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "spacing": "small",
+      "columns": [
+        {
+          "$data": "${agents}",
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "<at>${agentName}</at>",
+              "size": "small",
+              "weight": "Bolder",
+              "wrap": true
+            }
+          ],
+          "width": "auto"
+        }
+      ]
+    }
+  ],
+  "msteams": {
+    "entities": [
+      {
+        "$data": "${agents}",
+        "type": "mention",
+        "text": "<at>${agentName}</at>",
+        "mentioned": {
+          "id": "${agentUserId}",
+          "name": "${agentName}"
+        }
+      }
+    ]
+  }
+}

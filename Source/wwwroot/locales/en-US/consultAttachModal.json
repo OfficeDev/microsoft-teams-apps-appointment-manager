@@ -1,0 +1,9 @@
+{
+    "attachButton": "Attach",
+    "addTitlePlaceholder": "Add a title",
+    "bookingHeader": "Appointment ID: {{id}}",
+    "attachmentsLabel": "Attachments",
+    "noAttachmentsHeader": "No attachments found!",
+    "noAttachmentsText": "This message has no attachments. You can add this message as notes inside appointment details.",
+    "errorCannotAttach": "The files could not be attached."
+}

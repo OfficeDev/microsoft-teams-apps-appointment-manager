@@ -1,0 +1,193 @@
+.alert {
+    border: red !important;
+}
+
+.default {
+    background-color: #f3f2f1;
+}
+
+.dark {
+    background-color: #201f1f;
+}
+
+.contrast {
+    background-color: #000000;
+}
+
+.ellipse {
+    min-width: 30px;
+    max-width: 30px;
+    padding: 0px;
+    margin: 0px;
+    padding-top: 8px;
+}
+
+.ellipse button {
+    min-width: 30px;
+    max-width: 30px;
+    padding: 0px;
+    margin: 0px;
+    border-style: none !important;
+    border-width: 0px;
+    height: 14px;
+    background: transparent;
+    box-shadow: none;
+}
+
+.ellipse button div {
+    vertical-align: bottom;
+}
+
+.taskModule {
+    padding: 18px 32px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tmBody {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.tmHeading {
+    margin-top: 0px;
+}
+
+.tmSectionTitle {
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
+
+.tmButtonSet {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tmButtonSet button + button {
+    margin-left: 0.5em;
+}
+
+.tmDivider {
+    margin-bottom: 1.0em;
+}
+
+div.emphasized {
+    border: 1px solid;
+    border-radius: 6px;
+}
+
+.vcDefaultTheme div.emphasized {
+    background-color: #faf9f8;
+    border-color: #edebe9;
+}
+
+.vcDarkTheme div.emphasized {
+    background-color: #292828;
+    border-color: #1b1a1a;
+}
+
+.vcContrastTheme div.emphasized {
+    background-color: #000000;
+    border-color: #ffffff;
+}
+
+div.boxed {
+   border: 1px solid;
+   border-radius: 3px;
+   padding: 1em;
+}
+
+.vcDefaultTheme div.boxed.unselected {
+    border-color: #e1dfdd;
+}
+
+.vcDarkTheme div.boxed.unselected {
+    border-color: #605e5c;
+}
+
+.vcContrastTheme div.boxed.unselected {
+    border-color: #ffffff;
+}
+
+.vcDefaultTheme div.boxed.selected {
+    border-color: #6264a7;
+}
+
+.vcDarkTheme div.boxed.selected {
+    border-color: #a6a7dc;
+}
+
+.vcContrastTheme div.boxed.selected {
+    border-color: #1aebff;
+}
+
+button.textOnly {
+    height: auto;
+    min-width: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+div.vertLine {
+    background-position: center center;
+    background-size: 2px 100%;
+    background-repeat: no-repeat;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.vcDefaultTheme div.vertLine {
+    background-image: linear-gradient(#E1DFDD, #E1DFDD);
+}
+
+.vcDarkTheme div.vertLine {
+    background-image: linear-gradient(#3B3A39, #3B3A39);
+}
+
+.vcContrastTheme div.vertLine {
+    background-image: linear-gradient(#FFFFFF, #FFFFFF);
+}
+
+.boxed .ui-box:last-child {
+    width: 100%;
+}
+
+/* Start Fabric overrides */
+.ui-table {
+    background-color: transparent !important;
+}
+
+.ui-table__row:first-child {
+    background-color: transparent !important;
+}
+
+.ui-provider {
+    background-color: transparent !important;
+}
+
+.ui-table__row {
+    min-height: 46px;
+    vertical-align: middle;
+}
+
+.ui-table__row {
+    vertical-align: middle;
+}
+/* End Fabric overrides */
+
+.mobileCard {
+    width: 100% !important;
+    height: auto !important;
+    background-color: #EFEFEF !important;
+}
+
+.vcDarkTheme .mobileCard {
+    background-color: #3B3A39 !important;
+}
+
+
+.vcContrastTheme .mobileCard {
+    background-color: #000000 !important;
+    border: 1px solid #ffffff !important;
+}

@@ -1,0 +1,8 @@
+{
+    "tabNameLabel": "Tab name",
+    "showRequestsHeader": "Show requests for...",
+    "categoriesHeader": "Categories",
+    "statusHeader": "Status",
+    "allCheckbox": "All",
+    "errorNoCategoryFound": "Admin hasn't configured the app yet."
+}

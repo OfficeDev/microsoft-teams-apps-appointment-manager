@@ -1,0 +1,69 @@
+{
+  "name": "microsoft.teams.app.virtualconsult",
+  "version": "1.0.0",
+  "description": "Microsoft Teams Virtual Consult app template",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack -w --config=webpack/webpack.dev.js",
+    "build": "gulp libs && webpack --config=webpack/webpack.prod.js",
+    "build-dev": "gulp libs && webpack --config=webpack/webpack.dev.js",
+    "lint": "eslint wwwroot/src/**/*.{js,ts,tsx}"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "tsconfigRootDir:": "./",
+      "project": [
+        "./tsconfig.json"
+      ]
+    },
+    "extends": [
+      "react-app",
+      "plugin:@typescript-eslint/recommended"
+    ]
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^4.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.0.0",
+    "@typescript-eslint/parser": "^4.0.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-eslint": "^10.0.0",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.1.1",
+    "eslint": "^7.13.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "gulp": "^4.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-cssmin": "0.2.0",
+    "gulp-uglify": "3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "merge-stream": "^1.0.1",
+    "rimraf": "2.6.1",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "typescript": "^3.4.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-merge": "^5.1.4"
+  },
+  "dependencies": {
+    "@fluentui/react-icons-northstar": "^0.51.0",
+    "@fluentui/react-northstar": "^0.51.0",
+    "@microsoft/teams-js": "^1.7.0",
+    "i18next": "^19.8.2",
+    "i18next-http-backend": "^1.0.21",
+    "moment": "^2.29.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-i18next": "^11.7.3",
+    "react-router-dom": "^5.0.0"
+  }
+}

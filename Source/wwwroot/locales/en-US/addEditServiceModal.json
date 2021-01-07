@@ -1,0 +1,18 @@
+{
+    "serviceNameLabel": "Service name",
+    "channelLabel": "To channel",
+    "channelPlaceholder": "Select a Teams channel",
+    "bookingsBusinessLabel": "Bookings Business",
+    "bookingsBusinessPlaceholder": "Select a Bookings Business",
+    "bookingsServiceLabel": "Bookings Service",
+    "bookingsServicePlaceholder": "Select a Bookings Service",
+    "supervisorsLabel": "Supervisors",
+    "supervisorsPlaceholder": "Select supervisor(s)",
+    "saveButton": "Save service",
+    "errorCategoryRequired": "Category is required",
+    "errorCategoryInUse": "Category already in use",
+    "errorChannelRequired": "Channel is required",
+    "errorBookingBusinessRequired": "Booking Business is required",
+    "errorBookingServiceRequired": "Booking Service is required",
+    "errorNoChannelFound": "Agent app hasn't been installed into any teams yet."
+}
