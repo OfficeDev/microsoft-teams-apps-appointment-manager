@@ -7,7 +7,7 @@ The app template integrates with Microsoft Bookings for easy appointment managem
 Through a companion app, app admins can configure different appointment categories to be routed to different Teams channels. A supervisor of an appointment category has additional privileges, such as assigning appointments to other staff in the team.
 
 <!-- TODO: preview gif of app -->
-![Appointment Manager Preview](images/preview.gif)
+![Appointment Manager Preview](docs/images/preview.gif)
 
 * [Solution overview](solution-overview)
     * [Data stores](data-stores)
