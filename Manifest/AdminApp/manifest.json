@@ -3,7 +3,7 @@
     "manifestVersion": "1.7",
     "version": "1.0.0",
     "showLoadingIndicator": true,
-    "id": "<GUID FOR YOUR APP>",
+    "id": "3cb20741-0e65-4a0a-9e3f-19afe5439a8b",
     "packageName": "com.microsoft.teams.app.appointmentmanager.admin",
     "developer": {
         "name": "Microsoft",
