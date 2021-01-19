@@ -131,6 +131,20 @@
             "metadata": {
                 "description": "The link to the icon for the app. It must resolve to a PNG file."
             }
+        },
+        "gitRepoUrl": {
+            "type": "string",
+            "metadata": {
+                "description": "The URL to the GitHub repository to deploy."
+            },
+            "defaultValue": "https://github.com/OfficeDev/microsoft-teams-apps-appointment-manager.git"
+        },
+        "gitBranch": {
+            "type": "string",
+            "metadata": {
+                "description": "The branch of the GitHub repository to deploy."
+            },
+            "defaultValue": "main"
         }
     },
     "variables": {
@@ -268,7 +282,23 @@
                         }
                     ]
                 }
-            }
+            },
+            "resources": [
+                {
+                    "apiVersion": "2018-11-01",
+                    "name": "web",
+                    "type": "sourcecontrols",
+                    "condition": "[not(empty(parameters('gitRepoUrl')))]",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/sites', variables('botAppName'))]"
+                    ],
+                    "properties": {
+                        "repoUrl": "[parameters('gitRepoUrl')]",
+                        "branch": "[parameters('gitBranch')]",
+                        "isManualIntegration": true
+                    }
+                }
+            ]
         },
         {
             "name": "[variables('cosmosDbAccountName')]",
