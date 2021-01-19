@@ -73,7 +73,7 @@
         },
         "staffMemberManifestAppId": {
             "type": "string",
-            "defaultValue": "b0797cdc-f3ee-4440-ae06-237e0d0ce0e1",
+            "defaultValue": "b8249949-33d0-40fc-8a97-4f5b3cf3fb5c",
             "minLength": 36,
             "maxLength": 36,
             "metadata": {
