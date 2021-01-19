@@ -229,7 +229,7 @@ class ConsultScheduleTab extends React.Component<ConsultScheduleTabProps, Consul
             const header = {
                 key: "header",
                 items: [
-                    { content: <Text weight="regular" content={this.props.t('idColHeader')} />, key: "id", style: { maxWidth: "90px", backgroundColor: "transparent" } },
+                    { content: <Text weight="regular" content={this.props.t('idColHeader')} />, key: "id", style: { maxWidth: "105px", backgroundColor: "transparent" } },
                     { content: <Text weight="regular" content={this.props.t('nameColHeader')} />, key: "customerName" },
                     { content: <Text weight="regular" content={this.props.t('categoryColHeader')} />, key: "category", style: { maxWidth: "100px" } },
                     { content: <Text weight="regular" content={this.props.t('timeColHeader')} />, key: "assignedTimeBlock", style: { maxWidth: "250px" } },
