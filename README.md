@@ -1,7 +1,7 @@
 ---
 page_type: sample
 languages:
-- .NET
+- csharp
 products:
 - office-teams
 description: Enables customers to book appointments through a customizable UI and allows companies to manage appointments through Bookings
@@ -9,6 +9,9 @@ urlFragment: microsoft-teams-app-inspection
 ---
 
 # Appointment Manager App Template
+
+| [Documentation](https://github.com/OfficeDev/microsoft-teams-apps-appointment-manager/wiki) | [Deployment guide](https://github.com/OfficeDev/microsoft-teams-apps-appointment-manager/wiki/Deployment-guide) | [Architecture](https://github.com/OfficeDev/microsoft-teams-apps-appointment-manager/wiki/Solution-overview) |
+| ---- | ---- | ---- |
 
 Appointment Manager is a Teams app template to help businesses create, manage, and conduct virtual appointments with consumers through Teams. New appointment requests from consumers are visible in Teams channels, where they can quickly be assigned and reassigned to staff in a team. Appointment requests can be viewed at team or personal levels through custom tabs. Every appointment is associated with a Teams online meeting, so staff and consumers can easily join the meeting at the scheduled time.
 
