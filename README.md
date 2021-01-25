@@ -1,10 +1,10 @@
 ---
 page_type: sample
 languages:
-- PowerApps
+- .NET
 products:
 - office-teams
-description: Enables people to congratulate their colleagues inside Teams and record and tally congraluations for each colleague in a leaderboard
+description: Enables customers to book appointments through a customizable UI and allows companies to manage appointments through Bookings
 urlFragment: microsoft-teams-app-inspection
 ---
 
