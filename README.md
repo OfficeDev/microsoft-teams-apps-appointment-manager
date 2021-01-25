@@ -5,7 +5,7 @@ languages:
 products:
 - office-teams
 description: Enables customers to book appointments through a customizable UI and allows companies to manage appointments through Bookings
-urlFragment: microsoft-teams-app-inspection
+urlFragment: microsoft-teams-app-appointment-manager
 ---
 
 # Appointment Manager App Template
