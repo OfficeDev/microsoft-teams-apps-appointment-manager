@@ -9,14 +9,14 @@ Through a companion app, app admins can configure different appointment categori
 <!-- TODO: preview gif of app -->
 ![Appointment Manager Preview](images/preview.gif)
 
-* [Solution overview](solution-overview)
-    * [Data stores](data-stores)
-    * [Cost estimate](cost-estimate)
-    * [Known limitations](known-limitations)
+* [Solution overview](solution-overview.md)
+    * [Data stores](data-stores.md)
+    * [Cost estimate](cost-estimate.md)
+    * [Known limitations](known-limitations.md)
 * Deploying the app
-    * [Deployment guide](deployment-guide)
-    * [Localization](localization)
-    * [Troubleshooting](troubleshooting)
-* [Extending Appointment Manager](taking-it-further) 
+    * [Deployment guide](deployment-guide.md)
+    * [Localization](localization.md)
+    * [Troubleshooting](troubleshooting.md)
+* [Extending Appointment Manager](taking-it-further.md) 
 
 
