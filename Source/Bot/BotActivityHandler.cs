@@ -7,8 +7,10 @@ namespace Microsoft.Teams.App.VirtualConsult.Bot
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Net;
     using System.Threading;
     using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Builder.Teams;
     using Microsoft.Bot.Schema;
@@ -16,18 +18,27 @@ namespace Microsoft.Teams.App.VirtualConsult.Bot
     using Microsoft.Extensions.Localization;
     using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Options;
+    using Microsoft.Rest;
     using Microsoft.Teams.App.VirtualConsult.Common.Models;
     using Microsoft.Teams.App.VirtualConsult.Common.Models.Configuration;
     using Microsoft.Teams.App.VirtualConsult.Common.Repositories;
     using Microsoft.Teams.App.VirtualConsult.Common.Utils;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
+    using Polly;
+    using Polly.Contrib.WaitAndRetry;
+    using Polly.Retry;
 
     /// <summary>
     /// The SourceActivityHandler is responsible for reacting to incoming events from Teams sent from BotFramework.
     /// </summary>
     public sealed class BotActivityHandler : TeamsActivityHandler
     {
+        // Async retry policy that will wait and retry as many times as there are provided sleep durations which is
+        // an exponentially backing-off, making sure to mitigate any correlations.
+        private static readonly AsyncRetryPolicy RetryPolicy = Policy.Handle<HttpOperationException>(ex => ex.Response.StatusCode == HttpStatusCode.TooManyRequests)
+            .WaitAndRetryAsync(Backoff.ExponentialBackoff(TimeSpan.FromMilliseconds(1000), 5));
+
         private readonly IRequestRepository<CosmosItemKey> requestRepository;
 
         private readonly IAgentRepository<CosmosItemKey> agentRepository;
@@ -314,7 +325,7 @@ namespace Microsoft.Teams.App.VirtualConsult.Bot
                     // Bot was installed into a new Team...capture details and store in database
                     var details = await TeamsInfo.GetTeamDetailsAsync(turnContext, turnContext.Activity.TeamsGetTeamInfo().Id, cancellationToken);
                     var channels = await TeamsInfo.GetTeamChannelsAsync(turnContext, turnContext.Activity.TeamsGetTeamInfo().Id, cancellationToken);
-                    var members = await TeamsInfo.GetMembersAsync(turnContext, cancellationToken);
+                    List<TeamsChannelAccount> members = await this.GetTeamMembersAsync(turnContext, cancellationToken);
 
                     // Process team channels
                     var existingItems = await this.channelRepository.GetByTeamIdAsync(details.Id);
@@ -730,6 +741,24 @@ namespace Microsoft.Teams.App.VirtualConsult.Bot
             // Update request in DB
             await this.requestRepository.UpsertAsync(request);
             return request;
+        }
+
+        private async Task<List<TeamsChannelAccount>> GetTeamMembersAsync(ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
+        {
+            var members = new List<TeamsChannelAccount>();
+            string continuationToken = null;
+
+            do
+            {
+                await RetryPolicy.ExecuteAsync(async () =>
+                {
+                    var currentPage = await TeamsInfo.GetPagedMembersAsync(turnContext, pageSize: 500, continuationToken, cancellationToken);
+                    continuationToken = currentPage.ContinuationToken;
+                    members.AddRange(currentPage.Members);
+                });
+            }
+            while (continuationToken != null);
+            return members;
         }
     }
 }
